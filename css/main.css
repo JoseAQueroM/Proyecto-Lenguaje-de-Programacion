@@ -1,0 +1,321 @@
+@font-face {
+    font-family: 'Lato Italic';
+    src: url('../font/Lato/Lato-LightItalic.ttf') format('truetype');
+    font-style: italic;
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Lato Regular';
+    src: url('../font/Lato/Lato-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Comic';
+    src: url('../font/Comic/ComicNeue-Bold.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+}
+html {
+    font-family: 'Lato Regular';
+    font-size: 16px;
+}
+:root {
+    --header-color: #657b8b;
+    --footer-color: #b4b4b4;
+}
+
+.body {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.378) 0%,
+            rgba(0, 0, 0, 0.408) 100%
+        ),
+        url('../img/fondo-2.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+.unirte {
+    background: linear-gradient(
+            rgba(0, 0, 0, 0.378) 0%,
+            rgba(0, 0, 0, 0.408) 100%
+        ),
+        url('../img/fondo3.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+}
+
+.header {
+    /* width: 100%; */
+    background-color: var(--header-color);
+    display: flex;
+    justify-content: center;
+    padding: 1.25rem .625rem;
+    overflow: hidden;
+    height: 5.9375rem;
+}
+
+.ul {
+    display: flex;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav .ul li {
+    list-style: none;
+    margin: 0rem 1.25rem;
+    text-align: center;
+    
+}
+
+.nav .ul li a {
+    text-decoration: none;
+    color: #000;
+    padding: .625rem 2.1875rem;
+    background-color: #fff;
+    border-radius: 4.375rem;
+    box-shadow: 0rem .375rem .1875rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+.nav .ul li:nth-child(2) {
+    min-width: max-content;
+}
+.nav .ul li a:hover {
+    background-color: rgb(192, 192, 192);
+    transform: translateY(-0.125rem);
+}
+
+.ul li img,
+.encabezado a img {
+    width: 1.375rem;
+    height: 1.375rem;
+    margin-right: .625rem;
+}
+
+.logo {
+    margin-left: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo img {
+    width: 4rem;
+    height: 3.4375rem;
+    /* min-width: max-content; */
+}
+.logo h3 {
+    font-family: 'Comic';
+    min-width: max-content;
+    /* font-weight: 700; */
+}
+
+.modificar {
+    margin-left: 0;
+}
+
+.encabezado {
+    height: 100vh;
+    /* width: 39%; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.encabezado h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-family: 'Lato Italic';
+}
+
+.encabezado a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    background-color: #fff;
+    padding: 1.25rem;
+    border-radius: 4.375rem;
+    width: 7.5rem;
+    display: block;
+    margin: 0rem auto;
+    box-shadow: 0rem .375rem .1875rem rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    /* position: relative;
+    top: 4.5rem; */
+    transition: all 0.3s;
+    margin-top: 2.5rem;
+}
+.encabezado a:hover {
+    background-color: rgb(192, 192, 192);
+    transform: translateY(-0.1875rem);
+}
+
+
+.footer-contenedor {
+    width: 100%;
+    padding: .625rem;
+        
+    background-color: var(--footer-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.redes a {
+    margin-right: .625rem;
+    padding: 0 .625rem;
+}
+
+.contacto {
+    margin-left: .9375rem;
+}
+
+.contacto h4 {
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+
+.contacto h4 img {
+    margin: 0 .625rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* !REGISTRO Y LOGIN */
+
+.register-contenedor {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.registrar {
+    height: 22.5rem;
+}
+.registrar h2 {
+    background-color: var(--header-color);
+    color: #fff;
+    padding: 1.25rem 6.25rem;
+    text-align: center;
+}
+input {
+    padding: .25rem 1.25rem;
+    margin: 1.25rem 1.25rem;
+    border-radius: 3.125rem;
+    border: none;
+    background-color: #ccc;
+    box-shadow: .25rem .1875rem .1875rem rgba(0, 0, 0, 0.3);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+.btn {
+    background-color: hsla(0, 0%, 63%, 0.958);
+    padding: .625rem 1.25rem;
+    width: 50%;
+    margin: 1.25rem auto;
+    transition: all 0.2s;
+    box-shadow: 0rem .25rem .1875rem rgba(0, 0, 0, 0.3);
+}
+.btn:hover {
+    background-color: var(--footer-color);
+    transform: translateY(-0.125rem);
+}
+
+.barra img {
+    width: 1.875rem;
+    margin-right: .625rem;
+    cursor: pointer;
+}
+.barra{
+    display: none;
+}
+
+@media screen and (max-width:52.75rem){
+    html{
+        font-size: 12px;
+    }
+    .header{
+        padding: .75rem .625rem;
+        position: fixed;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:43.875rem) {
+    .ul{
+        flex-direction: column;
+        background-color: rgb(205, 205, 205);
+        position: fixed;
+        top: 5.9375rem;
+        
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+
+        left: 100%;
+        transition: left .3s;
+       
+
+    }
+    .ul li{
+        padding: 3.625rem 0;
+    }
+    .ul li a{
+        width: 50%;
+        
+        margin:0 auto;
+    }
+
+    .barra{
+        display: block;
+        margin-right: 16px;
+
+    }
+
+    .barra-mostrar{
+        left: 0;
+    }
+
+    .encabezado{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .encabezado h2{
+        margin-top: 1.875rem;
+    }
+
+    .footer-contenedor{
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: .625rem;
+        
+    }
+    .contacto, .logo, .redes{
+        padding: 1rem;
+    }
+   .contacto h4{
+       font-size: 1.25rem;
+   }
+    .modificar{
+        margin-left: 2.5rem;
+    }
+}
