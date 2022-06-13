@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/normalice.css">
     <link rel="icon" href="img/icon-to-do.png">
     <link rel="stylesheet" href="css/main.css">
-    <title>To</title>
+    <title>To Do List</title>
 </head>
 <body class="unirte">
     <header class="header">
