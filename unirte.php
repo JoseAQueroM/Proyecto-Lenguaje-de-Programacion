@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,11 +32,27 @@
         <div class="register-contenedor">
             <div class="registrar">
                 <h2>Registro</h2>
-                <form class="form" action="php/users_register.php" method="POST">
-                    <input class="users" name="usuario" type="text" placeholder="Nombre de Usuario">
-                    <input name="password" type="password" placeholder="Contraseña">
-                    <input name="email" type="email" placeholder="Correo">
+                <form class="form" id="formulario" action="php/users_register.php" method="POST">
+                    <div class="form__usuario formulario__grupo"  id="grupo__usuario">
+                        <input class="formulario__input" name="usuario" type="text" placeholder="Nombre de Usuario">
+                        <p class="errors">El nombre tiene que ser de 4 a 16 dígitos <br> y solo puede contener texto.</p>
+                    </div>
+                    <div class="form__pass formulario__grupo " id="grupo__pass">
+                        <input class="formulario__input" name="password" type="password" placeholder="Contraseña">
+                        <p class="errors ">La contraseña tiene que ser <br> de 4 a 12 dígitos.</p>
+
+                    </div>
+                    <div class="form__correo formulario__grupo" id="grupo__correo">
+                        <input class="formulario__input"  name="email" type="email" placeholder="Correo">
+                        <p class="errors">El correo solo puede contener <br> letras, numeros, puntos, guiones y guion bajo</p>
+
+                    </div>
+                    <div class="form__enviar formulario__grupo" >
+                        <p class="errors-mensaje">Por favor complete todo los campos</p>
+                    </div>
+                    
                     <input name="registrar" class="btn" type="submit" value="Registar">
+                    
                 </form>
             </div>
         </div>
@@ -60,6 +75,8 @@
             </div>
                 </footer>
         </div>
+        <script src="js/validarForm.js"></script>
         <script src="js/main.js"></script>
 </body>
 </html>
+
