@@ -34,7 +34,7 @@
             <div class="registrar">
                 <h2>Registro</h2>
                 <form class="form" action="php/users_register.php" method="POST">
-                    <input name="usuario" type="text" placeholder="Nombre de Usuario">
+                    <input class="users" name="usuario" type="text" placeholder="Nombre de Usuario">
                     <input name="password" type="password" placeholder="Contraseña">
                     <input name="email" type="email" placeholder="Correo">
                     <input name="registrar" class="btn" type="submit" value="Registar">
