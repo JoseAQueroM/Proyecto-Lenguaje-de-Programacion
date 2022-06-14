@@ -50,7 +50,7 @@
                         sencilla con <br />
                         mucho orden
                     </h2>
-                    <a href="unirte.php"
+                    <a href="register.php"
                         ><img src="./icons/enter.svg" /> UNIRTE</a
                     >
                 </div>

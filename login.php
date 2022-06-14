@@ -32,10 +32,10 @@
         <div class="register-contenedor">
             <div class="registrar">
                 <h2>Login</h2>
-                <form action="#">
-                    <input type="text" placeholder="Nombre de Usuario">
-                    <input type="text" placeholder="Contraseña">
-                    <input class="btn" type="button" value="Entrar">
+                <form action="php/login_users.php">
+                    <input name="nombre_usuario" type="text" placeholder="Nombre de Usuario">
+                    <input name="user_pass" type="password" placeholder="Contraseña">
+                    <input name="entrar" class="btn" type="submit" value="Entrar">
                 </form>
             </div>
         </div>

@@ -1,3 +1,8 @@
+<?php
+include("php/db_conexion.php");
+include("php/users_register.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,7 +37,7 @@
         <div class="register-contenedor">
             <div class="registrar">
                 <h2>Registro</h2>
-                <form class="form" id="formulario" action="php/users_register.php" method="POST">
+                <form class="form" id="formulario" action="" method="POST">
                     <div class="form__usuario formulario__grupo"  id="grupo__usuario">
                         <input class="formulario__input" name="usuario" type="text" placeholder="Nombre de Usuario">
                         <p class="errors">El nombre tiene que ser de 4 a 16 dígitos <br> y solo puede contener texto.</p>
