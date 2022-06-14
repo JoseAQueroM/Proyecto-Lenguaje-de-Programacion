@@ -261,7 +261,7 @@ form {
     display: block;
 }
 
-.msj_error{
+.msj_error {
     position: absolute;
     text-align: center;
     left: 0;
@@ -270,9 +270,9 @@ form {
     color: #000;
     text-transform: uppercase;
     width: 100%;
-    padding: .625rem;  
+    padding: 0.625rem;
 }
-.msj_correcto{
+.msj_correcto {
     position: absolute;
     text-align: center;
     left: 0;
@@ -281,7 +281,17 @@ form {
     color: #000;
     text-transform: uppercase;
     width: 100%;
-    padding: .625rem;
+    padding: 0.625rem;
+}
+.login-error {
+    text-align: center;
+    font-size: 14px;
+    background: #bb2929;
+    padding: 8px;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: #000;
 }
 
 .btn {

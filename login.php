@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +10,10 @@
     <link rel="stylesheet" href="css/main.css">
     <title>To Do List</title>
 </head>
+
 <body class="unirte">
     <header class="header">
-        
+
         <nav class="nav">
             <div class="logo">
                 <img src="./img/to-do-logo.png" alt="logo">
@@ -28,13 +30,14 @@
         </nav>
     </header>
     <main>
-        
+
         <div class="register-contenedor">
             <div class="registrar">
                 <h2>Login</h2>
-                <form action="php/login_users.php">
-                    <input name="nombre_usuario" type="text" placeholder="Nombre de Usuario">
+                <form action="" method="POST">
+                    <input name="correo_usuario" type="email" placeholder="Correo">
                     <input name="user_pass" type="password" placeholder="Contraseña">
+                    <div><?php include('php/users_login.php'); ?></div>
                     <input name="entrar" class="btn" type="submit" value="Entrar">
                 </form>
             </div>
@@ -45,19 +48,20 @@
         <div class="footer-contenedor">
             <div class="contacto">
                 <h4>Contacto <a href="#"><img src="./icons/png/color/001-whatsapp.png"></a> </h4>
-            
+
             </div>
             <div class="logo modificar">
                 <img src="./img/to-do-logo.png" alt="logo">
                 <h3>To Do <br> Lo que tengo que hacer</h3>
             </div>
             <div class="redes">
-               <a href="#"><img src="./icons/png/002-facebook.png"></a>
-               <a href="#"><img src="./icons/png/004-gorjeo.png"></a>
-               <a href="#"><img src="./icons/png/003-instagram.png"></a>
+                <a href="#"><img src="./icons/png/002-facebook.png"></a>
+                <a href="#"><img src="./icons/png/004-gorjeo.png"></a>
+                <a href="#"><img src="./icons/png/003-instagram.png"></a>
             </div>
         </div>
         <script src="js/main.js"></script>
     </footer>
 </body>
+
 </html>
