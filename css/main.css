@@ -218,7 +218,7 @@ input {
     background-color: #ccc;
     box-shadow: 0.25rem 0.1875rem 0.1875rem rgba(0, 0, 0, 0.3);
     transition: 0.3s ease all;
-    border: 3px solid transparent;
+    border: .1875rem solid transparent;
 }
 .formulario__grupo {
     margin: auto;
@@ -226,9 +226,9 @@ input {
 
 .formulario__input:focus {
     outline: none;
-    border: 3px solid #0075ff;
+    border: .1875rem solid #0075ff;
     outline: none;
-    box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+    box-shadow: .1875rem 0rem 1.875rem rgba(163, 163, 163, 0.4);
 }
 
 form {
@@ -285,12 +285,12 @@ form {
 }
 .login-error {
     text-align: center;
-    font-size: 14px;
+    font-size: .875rem;
     background: #bb2929;
-    padding: 8px;
+    padding: .5rem;
     width: 60%;
     margin: 0 auto;
-    border-radius: 10px;
+    border-radius: .625rem;
     color: #000;
 }
 
@@ -362,7 +362,7 @@ form {
 
     .barra {
         display: block;
-        margin-right: 16px;
+        margin-right: 1rem;
     }
 
     .barra-mostrar {
