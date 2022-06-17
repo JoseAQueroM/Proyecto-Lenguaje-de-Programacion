@@ -34,7 +34,7 @@ if (isset($_SESSION['correo_login'])) {
                     <a href="index.php"><img src="./icons/home.svg" /> Home</a>
                 </li>
                 <li>
-                    <a href="#"><img src="./icons/about us.svg" /> About Us</a>
+                    <a href="aboutUs.php"><img src="./icons/about us.svg" /> About Us</a>
                 </li>
                 <li>
                     <a href="login.php"><img src="./icons/login.svg" /> Login</a>
