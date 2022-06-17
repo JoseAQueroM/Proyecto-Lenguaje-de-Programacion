@@ -24,7 +24,7 @@ include("php/users_register.php");
             </div>
             <ul class="ul">
                 <li><a href="index.php"><img src="./icons/home.svg"> Home</a></li>
-                <li><a href="#"><img src="./icons/about us.svg"> About Us</a></li>
+                <li><a href="aboutUs.php"><img src="./icons/about us.svg"> About Us</a></li>
                 <li><a href="login.php"><img src="./icons/login.svg"> Login</a></li>
             </ul>
             <span class="barra">
@@ -56,7 +56,7 @@ include("php/users_register.php");
                         <p class="errors-mensaje">Por favor complete todo los campos</p>
                     </div>
                     
-                    <input name="registrar" class="btn" type="submit" value="Registar">
+                    <input name="registrar" class="btn button-Login" type="submit" value="Registar">
                     
                 </form>
             </div>

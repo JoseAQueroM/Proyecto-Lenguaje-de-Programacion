@@ -21,7 +21,7 @@
             </div>
             <ul class="ul">
                 <li><a href="index.php"><img src="./icons/home.svg"> Home</a></li>
-                <li><a href="#"><img src="./icons/about us.svg"> About Us</a></li>
+                <li><a href="aboutUs.php"><img src="./icons/about us.svg"> About Us</a></li>
                 <li><a href="login.php"><img src="./icons/login.svg"> Login</a></li>
             </ul>
             <span class="barra">
@@ -38,7 +38,7 @@
                     <input name="correo_usuario" type="email" placeholder="Correo">
                     <input name="user_pass" type="password" placeholder="Contraseña">
                     <div><?php include('php/users_login.php'); ?></div>
-                    <input name="entrar" class="btn" type="submit" value="Entrar">
+                    <input name="entrar" class="btn button-Login" type="submit" value="Entrar">
                 </form>
             </div>
         </div>
