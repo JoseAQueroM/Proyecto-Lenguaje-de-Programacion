@@ -133,16 +133,16 @@ html {
 }
 
 .aboutUs-Container{
-    width: 500px;
-    min-width: 100px;
-    height: 300px;
+    width: 31.25rem;
+    min-width: 6.25rem;
+    height: 18.75rem;
     background-color: var(--header-color);
-    border-radius: 10px;
+    border-radius: .625rem;
     font-family:'Comic';
-    padding: 30px;
-    margin-top: 80px;
-    margin-right: 25px;
-    margin-left: 25px;
+    padding: 1.875rem;
+    margin-top: 5rem;
+    margin-right: 1.5625rem;
+    margin-left: 1.5625rem;
 }
 
 .encabezado h2 {
@@ -176,14 +176,14 @@ html {
 }
 
 .card-Title{
-    margin-top: 5px;
+    margin-top: .3125rem;
 }
 
 .button-Add{
-    margin-top: 20px;
-    height: 50px;
-    width: 150px;
-    border-radius: 5px;
+    margin-top: 1.25rem;
+    height: 3.125rem;
+    width: 9.375rem;
+    border-radius: .3125rem;
     font-family: 'comic';
     box-shadow: 0rem 0.375rem 0.1875rem rgba(0, 0, 0, 0.3);
 }
@@ -195,29 +195,33 @@ html {
 }
 
 .card-Container{
-    min-height: 200px;
-    width: 400px;
-    height: 400px;
-    background-color: var(--header-color);
-    border-radius: 15px;
+    min-height: 12.5rem;
+    width: 25rem;
+    height: 25rem;
     border: none;
+}
+.form-todo{
+    background-color: var(--header-color);
+    border-radius: .9375rem;
+
+
 }
 
 .input-Card{
-    margin-top: 25px;
-    border-radius: 5px;
+    margin-top: 1.5625rem;
+    border-radius: .3125rem;
 }
 
 .description-Card{
-    border-radius: 5px;
-    margin-top: 25px;
-    height: 100px;
+    border-radius: .3125rem;
+    margin-top: 1.5625rem;
+    height: 6.25rem;
 }
 
 .footer-contenedor {
     width: 100%;
     padding: 0.625rem;
-    margin-top: 25px;
+    margin-top: 1.5625rem;
     background-color: var(--footer-color);
     display: flex;
     align-items: center;
