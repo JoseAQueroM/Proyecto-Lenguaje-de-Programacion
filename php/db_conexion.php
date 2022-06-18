@@ -39,18 +39,3 @@ function validarLogin($correo_usuario, $clave)
     }
 }
 
-// function obterTareas($todo)
-// {
-//     $salida = '<div class="card_body">
-                        
-//     <h2 class="titulo">'.$todo['titulo'].'</h2>
-//     <p class="texttodo">'.$todo['descri'].'</p>
-//     <div class="grupoBotones">
-//         <button type="button" class="grupob">Ver</button>
-//         <button type="button" class="grupob">Editar</button>
-//     </div>
-//     <small>'.$todo['fecha'].'</small>
-//     </div>';
-
-// echo $salida;
-// }
