@@ -7,21 +7,30 @@ if (!isset($_SESSION['correo_login'])) {
     die();
 }
 
-if(isset($_POST["agregar"])){
-    $title = mysqli_real_escape_string($conex, $_POST["title"]);
-    $description = mysqli_real_escape_string($conex, $_POST["desc"]);
-    $sql = "SELECT id FROM users_register WHERE correo_usuario = '{$_SESSION['correo_login']}'";
-    $res = mysqli_query($conex, $sql);
-    $count = mysqli_num_rows($res);
-    if($count > 0){
-        $row = mysqli_fetch_assoc(($res));
-        $user_id = $row["id"];
-        echo $user_id;
-        die();
+$msj = "";
+if (isset($_POST['agregar'])) {
+    $titulo = mysqli_real_escape_string($conex, $_POST['titulo']);
+    $desc = mysqli_real_escape_string($conex, $_POST['desc']);
+    $sql = "SELECT id FROM users_register where correo='{$_SESSION["correo_login"]}' ";
+    $rest = mysqli_query($conex, $sql);
+    $contar = mysqli_num_rows($rest);
+    if ($contar > 0) {
+        $row = mysqli_fetch_assoc($rest);
+        $id_user = $row["id"];
     } else {
-        $user_id = 0;
+        $id_user = 0;
     }
-   
+    $sql = null;
+
+    $sql = "INSERT INTO tareas (titulo, descri, id_user) VALUES ('$titulo', '$desc','$id_user')";
+    $rest = mysqli_query($conex, $sql);
+    if ($rest) {
+        $_POST["titulo"] = "";
+        $_POST["desc"] = "";
+        $msj = "<div class='todo_listo'>Tarea agregada correctamente</div>";
+    } else {
+        $msj = "<div class='todo_mal'>Error al agregar la tarea. <br> Intente nuevamente</div>";
+    }
 }
 
 ?>
@@ -50,13 +59,11 @@ if(isset($_POST["agregar"])){
             </div>
             <ul class="ul">
                 <li>
-                    <a href="index.php"><img src="./icons/home.svg" /> Home</a>
+                    <a href="misTareas.php">Mis Tareas</a>
                 </li>
+
                 <li>
-                    <a href="aboutUs.php"><img src="./icons/about us.svg" /> About Us</a>
-                </li>
-                <li>
-                    <a href="salir.php"><img src="./icons/login.svg"/>Logout</a>
+                    <a href="salir.php"><img src="./icons/login.svg" />Salir</a>
                 </li>
             </ul>
             <span class="barra">
@@ -68,24 +75,28 @@ if(isset($_POST["agregar"])){
     <main>
         <div class="encabezado">
             <form action="" method="POST" class="form-todo">
-                 <div class="card-Container">
+                <div class="card-Container">
                     <label for="title">
-                        <h1 class="card-Title">Crear evento</h1>
-                        <input type="text" placeholder="¿Qué actividad realizarás?" class="input-Card" name="title"  required>
+                        <h1 class="card-Title">Crear To Do</h1>
+                        <input type="text" placeholder="¿Qué actividad realizarás?" class="input-Card" name="titulo" required value="<?php if (isset($_POST["agregar"])) {
+                                                                                                                                            echo $_POST["titulo"];
+                                                                                                                                        } ?>">
                         <br>
-                        <input type="text" placeholder="Descripción" class="description-Card" name="desc" required>
+                        <textarea class="textarea" placeholder="Descripción" name="desc" required><?php if (isset($_POST["agregar"])) {
+                                                                                                                                            echo $_POST["titulo"];
+                                                                                                                                        } ?></textarea>
                         <div>
-
-                        <button type="submit" name="agregar" class="button-Add">Agregar Evento</button>
-                        <button type="reset" class="button-Add">Resetear</button>
+                            <?php echo $msj; ?>
+                            <button type="submit" name="agregar" class="button-Add">Agregar To do</button>
+                            <button type="reset" class="button-Add">Resetear</button>
 
                         </div>
-                       
-                    
+
+
 
                     </label>
-                    
-                    
+
+
                 </div>
             </form>
         </div>

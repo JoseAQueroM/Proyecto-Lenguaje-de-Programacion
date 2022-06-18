@@ -1,11 +1,12 @@
 <?php
-function condb (){
+function condb()
+{
     $sv = "localhost";
     $user = "root";
     $clv = "";
     $db = "db_todolist";
-    
-    
+
+
     $conex = mysqli_connect($sv, $user, $clv, $db);
     return $conex;
 }
@@ -13,25 +14,43 @@ function condb (){
 $conex = condb();
 
 
-function validarUsuario($correo_usuario){
+function validarUsuario($correo_usuario)
+{
     $conn = condb();
     $query = "SELECT correo FROM users_register WHERE correo='$correo_usuario'";
     $ejecutarQuery = mysqli_query($conn, $query);
     $contar = mysqli_num_rows($ejecutarQuery);
-    if($contar >0){
+    if ($contar > 0) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
-function validarLogin($correo_usuario, $clave){
+function validarLogin($correo_usuario, $clave)
+{
     $conn = condb();
     $query = "SELECT correo FROM users_register WHERE correo='$correo_usuario' and clave='$clave'";
     $ejecutarQuery = mysqli_query($conn, $query);
     $contar = mysqli_num_rows($ejecutarQuery);
-    if($contar >0){
+    if ($contar > 0) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
+
+// function obterTareas($todo)
+// {
+//     $salida = '<div class="card_body">
+                        
+//     <h2 class="titulo">'.$todo['titulo'].'</h2>
+//     <p class="texttodo">'.$todo['descri'].'</p>
+//     <div class="grupoBotones">
+//         <button type="button" class="grupob">Ver</button>
+//         <button type="button" class="grupob">Editar</button>
+//     </div>
+//     <small>'.$todo['fecha'].'</small>
+//     </div>';
+
+// echo $salida;
+// }
