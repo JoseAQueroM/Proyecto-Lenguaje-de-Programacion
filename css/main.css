@@ -126,22 +126,21 @@ html {
 .modificar {
     margin-left: 0;
 }
-.contenedor {
-    display: flex;
-    flex-wrap: wrap;
-}
-.tareascontenedor {
-    height: 100vh;
-}
+/* .contenedor {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+} */
+
 .texttodo {
     margin-bottom: 0.625rem;
     height: 8.0625rem;
-    padding-left: 10px;
+    padding-left: .625rem;
     font-family: 'comic';
     font-weight: bold;
 }
 .grupob {
-    padding: 5px;
+    padding: .3125rem;
     margin: 0.3125rem;
     background-color: var(--footer-color);
     border-radius: 0.3125rem;
@@ -273,7 +272,7 @@ html {
     width: 15.9rem;
     height: 10rem;
     border: none;
-    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: .125rem .1875rem .1875rem rgba(0, 0, 0, 0.3);
 }
 .textarea:focus {
     outline: 3px solid rgb(97, 97, 97);
