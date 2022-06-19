@@ -8,9 +8,10 @@ if (isset($_SESSION['correo_login'])) {
     die();
 }
 
+
 if (isset($_POST['entrar'])) {
-    $correo_usuario = $_POST['correo_usuario'];
-    $clave = md5($_POST['user_pass']);
+    $correo_usuario = mysqli_real_escape_string($conex, $_POST['correo_usuario']);
+    $clave = mysqli_real_escape_string($conex, md5($_POST['user_pass']));
 
 
     if (validarUsuario($correo_usuario)) {
@@ -19,15 +20,11 @@ if (isset($_POST['entrar'])) {
             header("location: to_do_list.php");
             die();
         } else {
-?>
-            <h3 class="login-error">!Clave invalida!.</h3>
-        <?php
+
+            echo '<p class="errors errors-activo">Clave invalida</p>';
         }
     } else {
-        ?>
-        <h3 class="login-error">!Correo invalido!.</h3>
-<?php
 
+        echo '<p class="errors errors-activo">Correo invalido</p>';
     }
 }
-?>

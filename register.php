@@ -45,13 +45,12 @@ include("php/users_register.php");
                     <div class="form__pass formulario__grupo " id="grupo__pass">
                         <input class="formulario__input" name="password" type="password" placeholder="Contraseña">
                         <p class="errors ">La contraseña tiene que ser <br> de 4 a 12 dígitos.</p>
-
                     </div>
                     <div class="form__correo formulario__grupo" id="grupo__correo">
                         <input class="formulario__input"  name="email" type="email" placeholder="Correo">
-                        <p class="errors">El correo solo puede contener <br> letras, numeros, puntos, guiones y guion bajo</p>
-
+                        <p class="errors">El correo solo puede contener <br> letras, numeros, puntos, guiones y guion bajo.</p>
                     </div>
+                    <?php echo $men;?>
                     <div class="form__enviar formulario__grupo" >
                         <p class="errors-mensaje">Por favor complete todo los campos</p>
                     </div>
