@@ -72,7 +72,7 @@ if (isset($_POST['agregar'])) {
         </nav>
 
     </header>
-    <main>
+    <div>
         <div class="encabezado">
             <form action="" method="POST" class="form-todo">
                 <div class="card-Container">
@@ -100,29 +100,8 @@ if (isset($_POST['agregar'])) {
                 </div>
             </form>
         </div>
-    </main>
-    <footer class="footer">
-        <div class="footer-contenedor">
-            <div class="contacto">
-                <h4>
-                    Contacto
-                    <a href="#"><img src="./icons/png/color/001-whatsapp.png" /></a>
-                </h4>
-            </div>
-            <div class="logo modificar">
-                <img src="./img/to-do-logo.png" alt="logo" />
-                <h3>
-                    To Do <br />
-                    Lo que tengo que hacer
-                </h3>
-            </div>
-            <div class="redes">
-                <a href="#"><img src="./icons/png/002-facebook.png" /></a>
-                <a href="#"><img src="./icons/png/004-gorjeo.png" /></a>
-                <a href="#"><img src="./icons/png/003-instagram.png" /></a>
-            </div>
-        </div>
-    </footer>
+    </div>
+    
     <script src="js/main.js"></script>
 </body>
 

@@ -39,11 +39,12 @@
                     <input name="user_pass" type="password" placeholder="Contraseña">
                     <p><?php include('php/users_login.php'); ?></p>
                     <input name="entrar" class="btn button-Login" type="submit" value="Entrar">
+                    <a href="#" class="recuperar">Recuperar contraseña.</a>
                 </form>
             </div>
         </div>
 
-    </main>
+</div>
     <footer class="footer">
         <div class="footer-contenedor">
             <div class="contacto">

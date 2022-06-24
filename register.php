@@ -32,7 +32,7 @@ include("php/users_register.php");
             </span>
         </nav>
     </header>
-    <main>
+    <div>
         
         <div class="register-contenedor">
             <div class="registrar">
@@ -61,7 +61,7 @@ include("php/users_register.php");
             </div>
         </div>
 
-    </main>
+    </div>
     <footer class="footer">
         <div class="footer-contenedor">
             <div class="contacto">
