@@ -73,8 +73,8 @@ if (!isset($_SESSION['correo_login'])) {
                             <h3 class="titulo"><?php echo $todo['titulo'] ?></h3>
                             <p class="texttodo"><?php echo $todo['descri'] ?></p>
                             <div class="grupoBotones">
-                                <button type="button" class="grupob">Ver</button>
-                                <button type="button" class="grupob">Editar</button>
+                                <a href="<?php echo 'eliminar.php?id='.$todo["id"];?>" type="button" class="grupob">Eliminar</a>
+                                <a href="<?php echo 'editar.php?id='.$todo["id"];?>" type="button" class="grupob">Editar</a>
                             </div>
                             <small><?php echo $todo['fecha'] ?></small>
                         </div><?php
