@@ -347,7 +347,22 @@ input {
     margin: .625rem auto;
     display: block;
     width: 12.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
 }
+
+.recuperar:hover{
+    transform: translateY(-0.125rem);
+    border: 1px var(--header-color) solid;
+    border-radius: 20px;
+}
+
+.getPassText{
+    padding: 20px 20px;
+}
+
 .formulario__grupo {
     margin: auto;
 }

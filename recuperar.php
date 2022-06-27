@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -33,16 +36,23 @@
 
         <div class="register-contenedor">
             <div class="registrar">
-                <h2>Login</h2>
+                <h2>Recuperar Contraseña</h2>
                 <form action="" method="POST">
-                    <input name="correo_usuario" type="email" placeholder="Correo">
-                    <input name="user_pass" type="password" placeholder="Contraseña">
+
+                    <p class="getPassText">Por favor coloque su correo electrico para poder recuperar su contraseña.</p>
+
+                    <input name="correo_usuario" type="text" placeholder="Correo">
+
                     <p><?php include('php/users_login.php'); ?></p>
-                    <input name="entrar" class="btn button-Login" type="submit" value="Entrar">
-                    <a href="./recuperar.php" class="recuperar">¿Has olvidado tu contraseña?</a>
+
+                    <input class="btn button-Login" type="submit" value="Recordar clave">
+
+      
                 </form>
             </div>
         </div>
+
+        
 
 </div>
     <footer class="footer">
