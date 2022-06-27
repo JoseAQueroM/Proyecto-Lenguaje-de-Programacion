@@ -1,4 +1,46 @@
+<?php
+session_start();
 
+include('php/db_conexion.php');
+
+
+$msg ="";
+if (isset($_POST["recuperar"])) {
+
+    $digitos = 6;
+    $generarClave  = substr(microtime(), 1, $digitos); 
+    $clave = $generarClave;
+
+    $obtenerCorreo= trim($_REQUEST['correo_usuario']); 
+    $sql = "SELECT * FROM users_register WHERE correo='$obtenerCorreo'";
+    $res = mysqli_query($conex, $sql);
+    $contador = mysqli_num_rows($res);
+    $data = mysqli_fetch_array($res);
+
+    if($contador == 0){ 
+        // header("location: login.php");
+        echo "error";
+        exit();
+    }else if ($contador > 0){
+        echo "todo bien";
+        $msg ="Clave enviada correctamente al correo.";
+        $cambiarClave   = "UPDATE users_register SET clave='$clave' WHERE correo='$obtenerCorreo' ";
+        $query   = mysqli_query($conex,$cambiarClave); 
+
+
+        $destino = $obtenerCorreo; 
+        $asunto = "Recuperar Clave - To Do List";
+        $mensaje = "<h1>Tu nueva clave es: '.$clave.'</h1>";
+        $correoMio = "From: gutierrezfabrizio03@gmail.com";
+
+        
+
+        mail($destino,$asunto,$mensaje,$correoMio);
+    }
+
+}
+
+?>
 
 
 <!DOCTYPE html>
@@ -32,7 +74,7 @@
             </span>
         </nav>
     </header>
-    <main>
+    <div>
 
         <div class="register-contenedor">
             <div class="registrar">
@@ -43,18 +85,18 @@
 
                     <input name="correo_usuario" type="text" placeholder="Correo">
 
-                    <p><?php include('php/users_login.php'); ?></p>
+                    <p><?php $msg =""; ?></p>
 
-                    <input class="btn button-Login" type="submit" value="Recordar clave">
+                    <input name="recuperar" class="btn button-Login" type="submit" value="Recordar clave">
 
-      
+
                 </form>
             </div>
         </div>
 
-        
 
-</div>
+
+    </div>
     <footer class="footer">
         <div class="footer-contenedor">
             <div class="contacto">

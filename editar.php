@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('./php/db_conexion.php');
+include('php/db_conexion.php');
 
 if (!isset($_SESSION['correo_login'])) {
     header("location: login.php");
