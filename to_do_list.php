@@ -6,31 +6,38 @@ if (!isset($_SESSION['correo_login'])) {
     header("location: login.php");
     die();
 }
-
+$solo_titulo = "/^[a-zA-Z0-9\_\-\.ñÑáéíóúÁÉÍÓÚ\s]+$/";
 $msj = "";
 if (isset($_POST['agregar'])) {
-    $titulo = mysqli_real_escape_string($conex, $_POST['titulo']);
-    $desc = mysqli_real_escape_string($conex, $_POST['desc']);
-    $sql = "SELECT id FROM users_register where correo='{$_SESSION["correo_login"]}' ";
-    $rest = mysqli_query($conex, $sql);
-    $contar = mysqli_num_rows($rest);
-    if ($contar > 0) {
-        $row = mysqli_fetch_assoc($rest);
-        $id_user = $row["id"];
-    } else {
-        $id_user = 0;
-    }
-    $sql = null;
+    if(preg_match($solo_titulo,$_POST['titulo'])&& preg_match($solo_titulo,$_POST['desc'])){
+        $titulo = mysqli_real_escape_string($conex, $_POST['titulo']);
+        $desc = mysqli_real_escape_string($conex, $_POST['desc']);
+        $sql = "SELECT id FROM users_register where correo='{$_SESSION["correo_login"]}' ";
+        $rest = mysqli_query($conex, $sql);
+        $contar = mysqli_num_rows($rest);
+        if ($contar > 0) {
+            $row = mysqli_fetch_assoc($rest);
+            $id_user = $row["id"];
+        } else {
+            $id_user = 0;
+        }
+        $sql = null;
+    
+        $sql = "INSERT INTO tareas (titulo, descri, id_user) VALUES ('$titulo', '$desc','$id_user')";
+        $rest = mysqli_query($conex, $sql);
+        if ($rest) {
+            $_POST["titulo"] = "";
+            $_POST["desc"] = "";
+            $msj = "<div class='todo_listo'>Tarea agregada correctamente</div>";
+        } else {
+            $msj = "<div class='todo_mal'>Error al agregar la tarea. <br> Intente nuevamente</div>";
+        }
+    }else{
+    
+        $msj = "<div class='todo_mal'>Error al agregar la tarea. <br> intente nuevamente</div>";
 
-    $sql = "INSERT INTO tareas (titulo, descri, id_user) VALUES ('$titulo', '$desc','$id_user')";
-    $rest = mysqli_query($conex, $sql);
-    if ($rest) {
-        $_POST["titulo"] = "";
-        $_POST["desc"] = "";
-        $msj = "<div class='todo_listo'>Tarea agregada correctamente</div>";
-    } else {
-        $msj = "<div class='todo_mal'>Error al agregar la tarea. <br> Intente nuevamente</div>";
     }
+    
 }
 
 ?>
@@ -83,7 +90,7 @@ if (isset($_POST['agregar'])) {
                                                                                                                                         } ?>">
                         <br>
                         <textarea class="textarea" placeholder="Descripción" name="desc" required><?php if (isset($_POST["agregar"])) {
-                                                                                                                                            echo $_POST["titulo"];
+                                                                                                                                            echo $_POST["desc"];
                                                                                                                                         } ?></textarea>
                         <div>
                             <?php echo $msj; ?>
