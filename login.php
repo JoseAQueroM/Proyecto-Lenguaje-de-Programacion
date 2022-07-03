@@ -37,6 +37,7 @@
                 <form action="" method="POST">
                     <input name="correo_usuario" type="email" placeholder="Correo">
                     <input name="user_pass" type="password" placeholder="Contraseña">
+                    
                     <p><?php include('php/users_login.php'); ?></p>
                     <input name="entrar" class="btn button-Login" type="submit" value="Entrar">
                     <a href="recuperar.php" class="recuperar">¿Has olvidado tu contraseña?</a>

@@ -14,6 +14,7 @@ function condb()
 $conex = condb();
 
 
+
 function validarUsuario($correo_usuario)
 {
     $conn = condb();

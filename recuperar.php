@@ -1,47 +1,53 @@
 <?php
-session_start();
 
 include('php/db_conexion.php');
 
-
-$msg ="";
-if (isset($_POST["recuperar"])) {
-
-    $digitos = 6;
-    $generarClave  = substr(microtime(), 1, $digitos); 
-    $clave = $generarClave;
-
-    $obtenerCorreo= trim($_REQUEST['correo_usuario']); 
-    $sql = "SELECT * FROM users_register WHERE correo='$obtenerCorreo'";
-    $res = mysqli_query($conex, $sql);
-    $contador = mysqli_num_rows($res);
-    $data = mysqli_fetch_array($res);
-
-    if($contador == 0){ 
-        // header("location: login.php");
-        echo "error";
-        exit();
-    }else if ($contador > 0){
-        echo "todo bien";
-        $msg ="Clave enviada correctamente al correo.";
-        $cambiarClave   = "UPDATE users_register SET clave='$clave' WHERE correo='$obtenerCorreo' ";
-        $query   = mysqli_query($conex,$cambiarClave); 
+$contar_correo=0;
+$correo = '';
 
 
-        $destino = $obtenerCorreo; 
-        $asunto = "Recuperar Clave - To Do List";
-        $mensaje = "<h1>Tu nueva clave es: '.$clave.'</h1>";
-        $correoMio = "From: gutierrezfabrizio03@gmail.com";
+if(isset($_POST['recuperar'])){
+    $correo = strtoupper(trim($_POST['recuperar_clave']));
+   
+    
+
+    if($contar_correo == 0){
+
+    
+    $verificar_correo = mysqli_query($conex, "SELECT * FROM users_register WHERE correo = '$correo'");
+    $contar_correo = mysqli_num_rows($verificar_correo);
+    
+
+    }
+
+   if(isset($_POST['recuperar2']) && $contar_correo > 0) {
+        $pregunta1 = strtoupper(trim($_POST['pregunta1']));
+        $pregunta2 = strtoupper(trim($_POST['pregunta2']));
+
+        $verificar_pregunta1 = mysqli_query($conex, "SELECT * FROM users_register WHERE  correo = '$correo' AND pregunta1 = '$pregunta1'");
+        $contar_pregunta1 = mysqli_num_rows($verificar_pregunta1);
+        
+
+        if($contar_pregunta1 > 0){
+        echo "La respuesta numero 1 es correcta";
+        } 
+
+        $verificar_pregunta2 = mysqli_query($conex, "SELECT * FROM users_register WHERE  correo = '$correo' AND pregunta2 = '$pregunta2'");
+        $contar_pregunta2 = mysqli_num_rows($verificar_pregunta2);
+
+        if($contar_pregunta2 > 0){
+            echo "La respuesta numero 2 es correcta";
+        } 
 
         
 
-        mail($destino,$asunto,$mensaje,$correoMio);
-    }
+   }
 
-}
+
+} 
+
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -81,13 +87,33 @@ if (isset($_POST["recuperar"])) {
                 <h2>Recuperar Contraseña</h2>
                 <form action="" method="POST">
 
-                    <p class="getPassText">Por favor coloque su correo electrico para poder recuperar su contraseña.</p>
+                    <p class="getPassText">Por favor responda las preguntas seguridad</p>
+                    
+                    <?php
+                    
+                    if($contar_correo == 0){  
 
-                    <input name="correo_usuario" type="text" placeholder="Correo">
+                    ?>
 
-                    <p><?php $msg =""; ?></p>
 
+                    <input name="recuperar_clave" type="email" placeholder="Correo">
                     <input name="recuperar" class="btn button-Login" type="submit" value="Recordar clave">
+
+                    <?php } ?>
+
+                    <?php
+                    if($contar_correo > 0){  
+
+                    ?>
+
+                    <input name="recuperar_clave" type="email" placeholder="Correo" disabled value = <?php echo $correo ?> >
+                    <input name="pregunta1" type="text" placeholder="Comida favorita">
+                    <input name="pregunta2" type="text" placeholder="Color favorito">
+                    <input name="recuperar2" class="btn button-Login" type="submit" value="Recordar clave">
+
+                    <?php } ?>  
+                   
+                    
 
 
                 </form>

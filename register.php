@@ -50,6 +50,16 @@ include("php/users_register.php");
                         <input class="formulario__input"  name="email" type="email" placeholder="Correo">
                         <p class="errors">El correo solo puede contener <br> letras, numeros, puntos, guiones y guion bajo.</p>
                     </div>
+                    <div class="form__correo formulario__grupo" id="grupo__pregunta1">
+                        <input class="formulario__input"  name="pregunta1" type="text" placeholder="Comida Favorita">
+                        <p class="errors">La respuesta solo debe contener <br> letras, numeros, puntos, guiones y guion bajo.</p>
+                    </div>
+                    <div class="form__correo formulario__grupo" id="grupo__pregunta2">
+                        <input class="formulario__input"  name="pregunta2" type="text" placeholder="Color favorito">
+                         <p class="errors">La respuesta solo debe contener <br> letras, numeros, puntos, guiones y guion bajo.</p>
+                    </div>
+
+                    
                     <?php echo $men;?>
                     <div class="form__enviar formulario__grupo" >
                         <p class="errors-mensaje">Por favor complete todo los campos</p>
